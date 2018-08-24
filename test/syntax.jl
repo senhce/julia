@@ -1673,3 +1673,9 @@ end
 @test A28593.var.name === :S
 @test B28593.var.name === :S
 @test C28593.var.name === :S
+
+# issue #28833
+macro m28833(expr)
+    esc(:(global a28833))
+end
+@m28833 1+1
