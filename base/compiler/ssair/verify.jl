@@ -112,7 +112,7 @@ function verify_ir(ir::IRCode)
                     end
                     isa(stmt, PhiNode) || break
                 end
-                @verify_error "Block $idx successors ($(block.succs)), does not match fall-through terminator"
+                @verify_error "Block $idx successors ($(block.succs)), does not match fall-through terminator ($terminator)"
                 error()
             end
         end
